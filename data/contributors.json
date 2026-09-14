@@ -1,0 +1,4 @@
+[
+  {"id":1,"username":"zerone0x","name":"zerone0x","avatarUrl":"https://github.com/zerone0x.png","prNumber":5,"prTitle":"feat(runtime): show agent uptime in status","prUrl":"https://github.com/Abbilaash/Formicx/pull/5","date":"2026-09-13","status":"MERGED","tag":"Good First Issue"},
+  {"id":2,"username":"Abbilaash","name":"A T Abbilaash","avatarUrl":"https://github.com/Abbilaash.png","prNumber":1,"prTitle":"feat(phase-8): agent-aware resource monitoring & telemetry","prUrl":"https://github.com/Abbilaash/Formicx","date":"2026-09-11","status":"MAINTAINER","tag":"Core Architecture"}
+]
