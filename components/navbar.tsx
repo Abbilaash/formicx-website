@@ -14,7 +14,7 @@ export function Navbar() {
       <nav className="desktop-nav">{links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}</nav>
       <div className="nav-actions">
         <a className="github-link" href={SITE_CONFIG.githubUrl} target="_blank" rel="noreferrer">
-          <GitFork /> <span>GitHub</span><b>★ 2</b>
+          <GitFork /> <span>GitHub</span><b>★ 3</b>
         </a>
         <a className="button button-small button-ghost" href={SITE_CONFIG.osDownloadUrl} target="_blank" rel="noreferrer">
           <Download className="w-3.5 h-3.5" /> <span>Download OS</span>
