@@ -5,6 +5,8 @@ import { ArrowUpRight, Cpu, Network, ShieldCheck, Code2, GitPullRequest, Heart, 
 import contributors from '@/data/contributors.json'
 import { TerminalSimulator } from './terminal-simulator'
 
+import { SITE_CONFIG } from '@/config/site'
+
 const features = [
   ['Agent → OS PID Mapping','Every agent gets a first-class process identity. Query live CPU, RAM, and uptime through psutil.','01',Cpu],
   ['Automatic LAN Discovery','Zero-config peer networking over mDNS. Find and connect agents across your local network.','02',Network],
@@ -21,4 +23,71 @@ export function ContributorWall() { return <section className="section section-t
 
 export function Issues() { return <section className="section" id="issues"><div className="container"><div className="section-heading"><p className="eyebrow">GOOD FIRST ISSUES</p><h2>Make your first <em>mark.</em></h2></div><div className="issues-grid">{[['Add --json output to resource tables','CLI · formicx/commands/resources.py'],['Colorize CPU & memory thresholds','CLI · formicx/ui/tables.py'],['Build systemd service supervisor','OS Integration · formicxd/service.py']].map((issue, i) => <a href="https://github.com/Abbilaash/Formicx/issues" target="_blank" rel="noreferrer" className="issue-card" key={issue[0]}><div><span className="issue-label">BEGINNER</span><span className="issue-number">#{42-i}</span></div><h3>{issue[0]}</h3><p>{issue[1]}</p><span className="text-link">View issue <ExternalLink /></span></a>)}</div></div></section> }
 
-export function HomeSections() { return <><FeaturesGrid /><section className="section terminal-section"><div className="container split-section"><div className="section-heading"><p className="eyebrow">SEE IT IN ACTION</p><h2>The OS layer for your <em>agent fleet.</em></h2><p>One command to understand every agent, every process, and every policy on your network.</p><div className="mini-stat"><b>100%</b><span>Python-native<br/>agent lifecycle</span></div></div><TerminalSimulator /></div></section><ContributorWall /><Issues /></> }
+export function HomeSections() {
+  return (
+    <>
+      <FeaturesGrid />
+      <section className="section terminal-section">
+        <div className="container split-section">
+          <div className="section-heading">
+            <p className="eyebrow">DEBIAN-NATIVE AGENT OS</p>
+            <h2>
+              Install Formicx OS & run <em>agent workloads.</em>
+            </h2>
+            <p>
+              Boot the dedicated Debian-native OS image for bare-metal agent supervision, or install the standalone Python framework directly inside your existing Linux environment.
+            </p>
+            <div className="mini-stat">
+              <b>100%</b>
+              <span>
+                Debian-native OS<br />& Python SDK
+              </span>
+            </div>
+          </div>
+          <TerminalSimulator />
+        </div>
+
+        <div className="container os-dual-availability">
+          <div className="os-avail-card">
+            <div className="os-avail-header">
+              <span className="os-avail-badge">DEBIAN NATIVE OS</span>
+              <h3>Formicx Dedicated OS Image</h3>
+            </div>
+            <p>
+              Pre-configured Debian Linux image featuring embedded kernel process supervisors, mDNS peer discovery, and agent resource management.
+            </p>
+            <a
+              href={SITE_CONFIG.osDownloadUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="button button-small"
+            >
+              Download OS Image (formicx.vercel.app) <ExternalLink />
+            </a>
+          </div>
+
+          <div className="os-avail-card">
+            <div className="os-avail-header">
+              <span className="os-avail-badge os-avail-badge-ghost">PYTHON FRAMEWORK</span>
+              <h3>Formicx SDK & Control Plane</h3>
+            </div>
+            <p>
+              Install the lightweight Python agent control plane, CLI supervisor, and network SDK directly on any existing Linux system via pip.
+            </p>
+            <a
+              href={SITE_CONFIG.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="button button-small button-ghost"
+            >
+              View Framework on GitHub <ExternalLink />
+            </a>
+          </div>
+        </div>
+      </section>
+      <ContributorWall />
+      <Issues />
+    </>
+  )
+}
+
