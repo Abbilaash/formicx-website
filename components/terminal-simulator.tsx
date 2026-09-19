@@ -40,6 +40,18 @@ const outputs = {
       'Formicx OS Telemetry: 2 active agents · 0 policy violations'
     ]
   },
+  mcp_start: {
+    label: '4. MCP Setup',
+    command: 'formicx mcp start',
+    lines: [
+      '[+] Initializing Formicx Model Context Protocol (MCP) Server...',
+      '[ OK ] STDIO JSON-RPC transport ready on stdin/stdout',
+      '[ OK ] Registered MCP tools: formicx_list_agents, formicx_send_message, formicx_get_documentation',
+      '[ OK ] Connected to local formicxd control plane at http://127.0.0.1:8765',
+      '',
+      'Formicx MCP Server active. Ready for Antigravity, Cursor, Claude Desktop & Copilot!'
+    ]
+  },
 }
 
 export function TerminalSimulator() {

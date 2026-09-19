@@ -7,7 +7,7 @@ import { SITE_CONFIG } from '@/config/site'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
-  const links = [['Architecture', '#architecture'], ['Docs', '#docs'], ['Contribute', '/contribute'], ['Wall of Fame', '#contributors']]
+  const links = [['Architecture', '#architecture'], ['MCP Setup', '#mcp'], ['Docs', '#docs'], ['Contribute', '/contribute'], ['Wall of Fame', '#contributors']]
   return <header className="site-header">
     <div className="container nav-inner">
       <Link href="/" className="brand"><span className="brand-mark"><Network /></span><span>Formicx</span></Link>

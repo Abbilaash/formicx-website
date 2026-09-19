@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowUpRight, Cpu, Network, ShieldCheck, Code2, GitPullRequest, Heart, BookOpen, ExternalLink } from 'lucide-react'
 import contributors from '@/data/contributors.json'
 import { TerminalSimulator } from './terminal-simulator'
+import { McpSection } from './mcp-section'
 
 import { SITE_CONFIG } from '@/config/site'
 
@@ -27,6 +28,7 @@ export function HomeSections() {
   return (
     <>
       <FeaturesGrid />
+      <McpSection />
       <section className="section terminal-section">
         <div className="container split-section">
           <div className="section-heading">
